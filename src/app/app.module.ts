@@ -15,30 +15,25 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AppRoutingModule } from "./app-routing.module";
-
-//aplicação
-import { AppComponent } from './app.component';
-import { ProdutoCadastrarComponent } from './components/views/produto/produto-cadastrar/produto-cadastrar.component';
-import { ProdutoListarComponent } from './components/views/produto/produto-listar/produto-listar.component';
-import { TemplateComponent } from './components/template/template.component';
+// Imports dos componentes da aplicação
+import { AppComponent } from "./app.component";
+import { TemplateComponent } from "./components/template/template.component";
+import { IndexComponent } from "./components/views/home/index/index.component";
+import { CadastrarProdutoComponent } from "./components/views/produto/cadastrar-produto/cadastrar-produto.component";
+import { ListarProdutoComponent } from "./components/views/produto/listar-produto/listar-produto.component";
 import { CarrinhoComponent } from './components/views/home/carrinho/carrinho.component';
-import { IndexComponent } from './components/views/home/index/index.component';
-
-
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ProdutoCadastrarComponent,
-    ProdutoListarComponent,
-    TemplateComponent,
-    CarrinhoComponent,
-    IndexComponent,
-    
-  
-  ],
-  imports: [
-    BrowserModule,
+    declarations: [
+        AppComponent,
+        ListarProdutoComponent,
+        CadastrarProdutoComponent,
+        TemplateComponent,
+        IndexComponent,
+        CarrinhoComponent,
+    ],
+    imports: [
+        BrowserModule,
         AppRoutingModule,
         HttpClientModule,
         FormsModule,
@@ -54,9 +49,8 @@ import { IndexComponent } from './components/views/home/index/index.component';
         MatSelectModule,
         BrowserAnimationsModule,
         MatGridListModule,
-  
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

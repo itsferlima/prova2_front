@@ -3,17 +3,27 @@
         <mat-card>
             <img
                 mat-card-image
-                src="../../../../../assets/carnew.jpg"
+                src="assets/images/sem_imagem.jpg"
                 alt="{{ produto.descricao }}"
             />
             <mat-card-content>
-                <mat-card-title>    
+                <mat-card-title>
                     {{ produto.nome }}
                 </mat-card-title>
                 <mat-card-subtitle>
                     {{ produto.preco | currency: "BRL" }}
                 </mat-card-subtitle>
             </mat-card-content>
+            <mat-card-actions>
+                <button
+                    (click)="adicionar(produto)"
+                    mat-stroked-button
+                    color="warn"
+                    mat-button
+                >
+                    Adicionar
+                </button>
+            </mat-card-actions>
             <mat-card-actions>
                 <button
                     (click)="adicionar(produto)"

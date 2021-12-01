@@ -1,0 +1,42 @@
+<a mat-raised-button color="primary" routerLink="/venda/cadastrar">
+    <mat-icon mat-list-icon>add</mat-icon>
+    Fechar Venda</a
+>
+
+<table mat-table [dataSource]="vendas" class="mat-elevation-z8">
+    <!-- Coluna do Id -->
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>#</th>
+        <td mat-cell *matCellDef="let venda">{{ venda.id }}</td>
+    </ng-container>
+    <!-- Coluna do Nome -->
+    <ng-container matColumnDef="cliente">
+        <th mat-header-cell *matHeaderCellDef>Cliente</th>
+        <td mat-cell *matCellDef="let venda">{{ venda.cliente }}</td>
+    </ng-container>
+    <!-- Coluna do Descrição -->
+    <ng-container matColumnDef="descricao">
+        <th mat-header-cell *matHeaderCellDef>Descrição</th>
+        <td mat-cell *matCellDef="let produto">{{ produto.descricao }}</td>
+    </ng-container>
+    <!-- Coluna do Quantidade -->
+    <ng-container matColumnDef="quantidade">
+        <th mat-header-cell *matHeaderCellDef>Quantidade</th>
+        <td mat-cell *matCellDef="let produto">{{ produto.quantidade }}</td>
+    </ng-container>
+    <!-- Coluna do Preço -->
+    <ng-container matColumnDef="preco">
+        <th mat-header-cell *matHeaderCellDef>Preço</th>
+        <td mat-cell *matCellDef="let produto">{{ produto.preco }}</td>
+    </ng-container>
+    <!-- Coluna do Categoria -->
+    <ng-container matColumnDef="formaspagamento">
+        <th mat-header-cell *matHeaderCellDef>Formas Pagamento</th>
+        <td mat-cell *matCellDef="let venda">
+            {{ produto.categoria!.nome }}
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="colunasExibidas"></tr>
+    <tr mat-row *matRowDef="let row; columns: colunasExibidas"></tr>
+</table>
